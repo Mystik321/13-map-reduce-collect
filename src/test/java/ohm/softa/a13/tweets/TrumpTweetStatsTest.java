@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -27,7 +28,7 @@ class TrumpTweetStatsTest {
     private final TweetStreamGenerator tsg;
     private final List<String> stopWords;
 
-    TrumpTweetStatsTest() {
+    TrumpTweetStatsTest() throws IOException {
         /* get singleton instance of generator factory */
         this.tsg = TweetStreamGenerator.fromJson(path);
         /* load stop words */

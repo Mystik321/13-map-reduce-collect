@@ -3,6 +3,7 @@ package ohm.softa.a13.tweets;
 import ohm.softa.a13.model.Tweet;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.Objects;
@@ -23,7 +24,7 @@ class TwitterStreamSourceTest {
 	private static final String path = "/trump_tweets.json";
 
 	@Test
-    void testTweetStreamGenerator() {
+    void testTweetStreamGenerator() throws IOException {
         TweetStreamGenerator tsg = TweetStreamGenerator.fromJson(path);
 		assertNotNull(tsg);
 
